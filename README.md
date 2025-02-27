@@ -18,7 +18,7 @@ app = FastAPI()
 
 @app.get("/")
 @ratelimit(limit=5, period=60)
-async def root():
+async def root(request: Request):
     return {"message": "Hello World"}
 ```
 
